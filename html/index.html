@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2016猴年大吉</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<div class="clearfix prizeBox" id="prizeBox">
+			<span class="prizeBoxBg rotate5"></span>
+			<span class="prizeBtn"></span>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+<script type="text/javascript">
+	//设置sessionStorage
+	var delNumber = sessionStorage.delNumber; 
+	if(!delNumber){
+		delNumber = '';
+	}                          
+	sessionStorage.delNumber = delNumber;
+
+	var prizeBoxEle = document.getElementById("prizeBox");
+	function calFun(){
+		window.location.href="./prize.html"; 
+	}
+	if(document.addEventListener){
+		prizeBoxEle.addEventListener('click',calFun,false);
+	}
+	document.onkeydown = function(event){
+		var e = event || window.event;
+		if(e && e.keyCode==13){ // enter键
+			calFun();
+        }
+	};
+
+</script>
+</html>
